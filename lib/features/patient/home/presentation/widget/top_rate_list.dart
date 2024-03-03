@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/widget/doctorCard.dart';
+import 'package:se7ety/features/patient/search/presentation/widget/doctor_profile.dart';
 
 class topListView extends StatefulWidget {
   const topListView({super.key});
@@ -44,7 +45,13 @@ class _topListViewState extends State<topListView> {
                       name: doctor['name'],
                       image: doctor['image'],
                       specialization: doctor['specialization'],
-                      rating: doctor['rating']);
+                      rating: doctor['rating'],
+                      onPreesed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              DoctorProfile(email: doctor['email']),
+                        ));
+                      });
                 });
           }
         },
