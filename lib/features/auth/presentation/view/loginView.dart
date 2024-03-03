@@ -5,7 +5,7 @@ import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
 import 'package:se7ety/core/widget/custom_button.dart';
 import 'package:se7ety/core/widget/navigator.dart';
-import 'package:se7ety/features/auth/presentation/view/introViews/signUpView.dart';
+import 'package:se7ety/features/auth/presentation/view/signUpView.dart';
 
 class loginView extends StatefulWidget {
   const loginView({super.key, required this.index});

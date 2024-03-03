@@ -6,8 +6,8 @@ import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
 import 'package:se7ety/core/widget/custom_button.dart';
 import 'package:se7ety/core/widget/navigatorReplace.dart';
-import 'package:se7ety/features/auth/presentation/view/introViews/comSign.dart';
-import 'package:se7ety/features/auth/presentation/view/introViews/loginView.dart';
+import 'package:se7ety/features/auth/presentation/view/comSign.dart';
+import 'package:se7ety/features/auth/presentation/view/loginView.dart';
 import 'package:se7ety/features/auth/presentation/view_model/authCubit.dart';
 import 'package:se7ety/features/auth/presentation/view_model/authState.dart';
 
@@ -35,7 +35,6 @@ class _signUpViewState extends State<signUpView> {
         if (state is signUpsucssesState) {
           pushAndRemoveUntil(context, const comSign());
         } else if (state is signUpErrorState) {
-          Navigator.pop(context);
           showErrorDialog(context, state.error);
         } else {
           showLoadingDialog(context);
@@ -116,7 +115,6 @@ class _signUpViewState extends State<signUpView> {
                     child: customButton(
                         forGround: appColors.scaffColor,
                         onPressed: () {
-                         
                           if (_formKey.currentState!.validate()) {
                             if (widget.index == 0) {
                               context.read<authCubit>().signUpDoctor(

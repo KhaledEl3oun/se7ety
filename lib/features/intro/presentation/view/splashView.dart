@@ -1,9 +1,8 @@
-import 'dart:ffi';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:se7ety/core/widget/navigatorReplace.dart';
-import 'package:se7ety/features/auth/presentation/view/onboading.dart';
+import 'package:se7ety/features/intro/presentation/view/helloView.dart';
+import 'package:se7ety/features/patient/home/presentation/navBar.dart';
 
 class splashView extends StatefulWidget {
   const splashView({super.key});
@@ -23,9 +22,10 @@ class _splashViewState extends State<splashView> {
     super.initState();
     _getUser();
     Future.delayed(const Duration(seconds: 3), () {
-      routingWithReplaceMent(context, const onboarding()
-          // (user != null) ? homeView() :WelcomeView()
-          );
+      routingWithReplaceMent(
+          context,
+          //const onboarding()
+          (user != null) ? const navBar() : const WelcomeView());
     });
   }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
-import 'package:se7ety/features/auth/presentation/view/introViews/loginView.dart';
+import 'package:se7ety/features/auth/presentation/view/loginView.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});

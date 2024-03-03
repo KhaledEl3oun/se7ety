@@ -3,9 +3,9 @@ import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
 import 'package:se7ety/core/widget/custom_button.dart';
 import 'package:se7ety/core/widget/navigatorReplace.dart';
-import 'package:se7ety/core/widget/onboardingItem.dart';
-import 'package:se7ety/features/auth/data/onboarding_model.dart';
-import 'package:se7ety/features/auth/presentation/view/helloView.dart';
+import 'package:se7ety/features/intro/presentation/widget/onboardingItem.dart';
+import 'package:se7ety/features/intro/data/onboarding_model.dart';
+import 'package:se7ety/features/intro/presentation/view/helloView.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class onboarding extends StatefulWidget {

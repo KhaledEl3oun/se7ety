@@ -12,9 +12,9 @@ import 'package:se7ety/core/functions/custom_error.dart';
 import 'package:se7ety/core/utils/appColors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
 import 'package:se7ety/core/widget/navigatorReplace.dart';
-import 'package:se7ety/features/auth/data/doctorModel.dart';
-import 'package:se7ety/features/auth/presentation/view/introViews/specializations.dart';
-import 'package:se7ety/features/auth/presentation/view/navBarScreens/homeView.dart';
+import 'package:se7ety/features/patient/search/data/doctorModel.dart';
+import 'package:se7ety/features/auth/data/specializations.dart';
+import 'package:se7ety/features/patient/home/presentation/navBar.dart';
 import 'package:se7ety/features/auth/presentation/view_model/authCubit.dart';
 import 'package:se7ety/features/auth/presentation/view_model/authState.dart';
 
@@ -84,7 +84,7 @@ class _comSignState extends State<comSign> {
     return BlocListener<authCubit, authState>(
       listener: (context, state) {
         if (state is uploadDoctorsucssesState) {
-          pushAndRemoveUntil(context, const homeView());
+          pushAndRemoveUntil(context, const navBar());
         } else if (state is uploadDoctorErrorState) {
           Navigator.pop(context);
           showErrorDialog(context, state.error);
@@ -370,8 +370,8 @@ class _comSignState extends State<comSign> {
                                   phone1: _phone1.text,
                                   phone2: _phone2.text,
                                   bio: _bio.text,
-                                  openHour: int.parse(_startTime),
-                                  closeHour: int.parse(_endTime),
+                                  openHour: _startTime,
+                                  closeHour: _endTime,
                                   address: _address.text));
                         }
                       },

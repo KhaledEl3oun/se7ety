@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:se7ety/features/auth/data/doctorModel.dart';
+import 'package:se7ety/features/patient/search/data/doctorModel.dart';
 import 'package:se7ety/features/auth/presentation/view_model/authState.dart';
 
 class authCubit extends Cubit<authState> {
@@ -86,6 +86,8 @@ class authCubit extends Cubit<authState> {
     try {
       FirebaseFirestore.instance.collection('doctor').doc(doctor.id).set({
         'image': doctor.image,
+        'name':doctor.name,
+         'email': doctor.email,
         'specialization': doctor.specialization,
         'rating': doctor.rating,
         'phone1': doctor.phone1,
